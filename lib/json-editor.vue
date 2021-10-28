@@ -16,10 +16,6 @@ export default {
       type: Array,
       default: ["tree", "code", "form", "text", "view"],
     },
-    fullScreen: {
-      type: Boolean,
-      default: false,
-    },
     // en, es zh-CN, pt-BR, tr, ja, fr-FR, de, ru, ko
     language: {
       type: String,
