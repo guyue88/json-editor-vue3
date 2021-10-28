@@ -1,5 +1,13 @@
 # json-editor-vue3
 
+[![NPM version][npm-image]][npm-url]
+[![npm download][download-image]][download-url]
+
+[npm-image]: https://img.shields.io/npm/v/json-editor-vue3.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/json-editor-vue3
+[download-image]: https://img.shields.io/npm/dm/json-editor-vue3.svg?style=flat-square
+[download-url]: https://www.npmjs.com/package/json-editor-vue3
+
 基于 `jsoneditor` 开发的vue3 json editor，支持全屏编辑。
 
 <img src="./github/screenshot.png" style="width: 500px" />
