@@ -1,6 +1,6 @@
 {
   "name": "json-editor-vue3",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./lib/json-editor.vue",
   "scripts": {
     "dev": "vite",
