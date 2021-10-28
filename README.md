@@ -1,7 +1,5 @@
-# Vue 3 + Vite
+# json-editor-vue3
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+基于 `jsoneditor` 开发的vue3 json editor，计划支持全屏
 
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+<img src="./github/screenshot.png" style="width: 500px" />

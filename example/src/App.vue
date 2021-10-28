@@ -1,6 +1,6 @@
 <script>
 import { ref } from "vue";
-import JsonEditorVue from "../../lib/jsoneditor.vue";
+import JsonEditorVue from "../../lib/json-editor.vue";
 
 export default {
   components: { JsonEditorVue },

@@ -1,21 +1,36 @@
 {
-  "name": "jsoneditor-vue",
+  "name": "json-editor-vue3",
   "version": "1.0.0",
-  "main": "./lib/jsoneditor.vue",
+  "main": "./lib/json-editor.vue",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "jsoneditor": "^9.5.6",
-    "vue": "^3.2.16"
+    "jsoneditor": "^9.5.6"
   },
   "devDependencies": {
+    "vue": "^3.2.16",
     "@vitejs/plugin-vue": "^1.9.3",
     "vite": "^2.6.4"
   },
   "files": [
     "lib"
-  ]
+  ],
+  "keywords": [
+    "json-editor-vue3",
+    "json-editor-vue",
+    "vuejsoneditor",
+    "json-scheme-editor-vue",
+    "json-editor",
+    "jsoneditor",
+    "vue 3"
+  ],
+  "author": "lq9328@126.com",
+  "homepage": "https://github.com/AspenLuoQiang/jsoneditor-vue",
+  "bugs": {
+    "url": "https://github.com/AspenLuoQiang/jsoneditor-vue/issues"
+  },
+  "license": "MIT"
 }
