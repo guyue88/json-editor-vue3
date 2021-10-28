@@ -16,7 +16,8 @@
     "vite": "^2.6.4"
   },
   "files": [
-    "lib"
+    "lib",
+    "github"
   ],
   "keywords": [
     "json-editor-vue3",
