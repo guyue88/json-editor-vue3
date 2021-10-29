@@ -6,16 +6,21 @@ export default {
   components: { JsonEditorVue },
   setup() {
     const data = ref({ key: "key", value: "value" });
+    const validate = async (editor) => {
+      const res = await editor.validate();
+      console.log(res);
+    };
 
     return {
       data,
+      validate,
     };
   },
 };
 </script>
 
 <template>
-  <JsonEditorVue class="editor" v-model="data" />
+  <JsonEditorVue class="editor" v-model="data" @blur="validate" />
 </template>
 
 <style>
