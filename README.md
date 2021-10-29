@@ -83,4 +83,4 @@ export default {
 
 欢迎关注作者公众号`前端方程式`，如果您有任何问题，也可以通过该公众号联系作者。
 
-<img src="https://img.qiuzhihu.cn/mp/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7.png" title="前端方程式" style="height:150px;" />
+<img src="https://img.qiuzhihu.cn/mp/%E5%85%AC%E4%BC%97%E5%8F%B7.png" title="前端方程式" style="height:150px;" />
