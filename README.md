@@ -10,7 +10,7 @@
 
 基于 `jsoneditor` 开发的vue3 json editor，支持全屏编辑，有完善的事件回调，可以在失去焦点时，对编辑器内容做校验。
 
-<img src="https://img.qiuzhihu.cn/mp/json-editor-vue3.png" style="width: 600px" />
+<img src="https://img.qiuzhihu.cn/mp/json-editor-vue3.png" style="width: 700px" />
 
 ## 安装
 
