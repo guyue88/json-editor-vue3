@@ -27,6 +27,9 @@
     "jsoneditor",
     "vue 3"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "author": "lq9328@126.com",
   "homepage": "https://github.com/AspenLuoQiang/json-editor-vue3",
   "bugs": {
