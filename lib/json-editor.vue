@@ -2,8 +2,8 @@
 import JsonEditor from "jsoneditor";
 import "jsoneditor/dist/jsoneditor.min.css";
 
-let editor = null;
 export default {
+  editor: null,
   name: "json-editor-vue",
   props: {
     modelValue: Object,
@@ -57,8 +57,8 @@ export default {
     this.showFullScreen = true;
   },
   unmounted() {
-    editor?.destroy();
-    editor = null;
+    this.editor?.destroy();
+    this.editor = null;
   },
   methods: {
     toggleFullScreen() {
@@ -68,7 +68,7 @@ export default {
       const { currentMode, modeList, options } = this;
       const onChange = () => {
         try {
-          const json = editor.get();
+          const json = this.editor.get();
           this.json = json;
           this.$emit("update:modelValue", json);
           this.$emit("change", json);
@@ -82,19 +82,19 @@ export default {
         this.expandAll();
       };
       const onTextSelectionChange = (start, end, text) => {
-        this.$emit("textSelectionChange", editor, start, end, text);
+        this.$emit("textSelectionChange", this.editor, start, end, text);
       };
       const onSelectionChange = (start, end) => {
-        this.$emit("selectionChange", editor, start, end);
+        this.$emit("selectionChange", this.editor, start, end);
       };
       const onColorPicker = (parent, color, onChange) => {
-        this.$emit("colorPicker", editor, parent, color, onChange);
+        this.$emit("colorPicker", this.editor, parent, color, onChange);
       };
       const onFocus = ({ target }) => {
-        this.$emit("focus", editor, target);
+        this.$emit("focus", this.editor, target);
       };
       const onBlur = async ({ target }) => {
-        this.$emit("blur", editor, target);
+        this.$emit("blur", this.editor, target);
       };
       const finalOptions = {
         ...options,
@@ -110,19 +110,19 @@ export default {
         onFocus,
         onBlur,
       };
-      editor = new JsonEditor(
+      this.editor = new JsonEditor(
         document.querySelector(".json-editor-vue"),
         finalOptions,
         this.json
       );
     },
     expandAll() {
-      if (this.expandedModes.includes(editor?.getMode())) {
-        editor?.expandAll();
+      if (this.expandedModes.includes(this.editor?.getMode())) {
+        this.editor?.expandAll();
       }
     },
     setEditorContent(value) {
-      editor?.set(value);
+      this.editor?.set(value);
     },
   },
 };
