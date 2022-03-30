@@ -111,7 +111,7 @@ export default {
         onBlur,
       };
       this.editor = new JsonEditor(
-        document.querySelector(".json-editor-vue"),
+        this.$refs.jsonEditorVue,
         finalOptions,
         this.json
       );
@@ -130,7 +130,7 @@ export default {
 
 <template>
   <div class="container" :class="{ 'full-screen-container': isFullScreen }">
-    <div class="json-editor-vue" />
+    <div ref="jsonEditorVue" class="json-editor-vue" />
     <div
       class="full-screen"
       :class="{
