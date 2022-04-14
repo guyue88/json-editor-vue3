@@ -66,7 +66,6 @@ export default {
 | modeList | Array | 可选的编辑模式列表 | ["tree", "code", "form", "text", "view"] |
 | language | Array | 语言 | en |
 
-
 ### 事件
 
 | Name  | Description    |
@@ -79,8 +78,29 @@ export default {
 | blur | 同上 |
 | colorPicker | 同上 |
 
+## 常见问题
+
+### vue3+ts无法渲染，报错`jsoneditor does not provide an export named 'default'`
+
+这是因为vite对commonjs兼容性太差，导致无法引入`jsoneditor`，可以使用`@originjs/vite-plugin-commonjs`插件解决。
+```javascript
+// vite.config.js
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
+export default defineConfig({
+  plugins: [vue(),viteCommonjs()],
+})
+```
+
 ## 公众号
 
 欢迎关注作者公众号`前端方程式`，如果您有任何问题，也可以通过该公众号联系作者。
 
 <img src="https://img.qiuzhihu.cn/mp/%E5%85%AC%E4%BC%97%E5%8F%B7.png" title="前端方程式" style="height:150px;" />
+
+## 捐赠 json-editor-vue3 的开发
+
+json-editor-vue3 的文档和代码完全开源，如果该项目有帮助到你的开发工作，你可以捐赠json-editor-vue3的研发工作，捐赠无门槛，哪怕是一杯可乐也好。
+<div style="display:flex; align-items: center;">
+  <img src="https://img.qiuzhihu.cn/mp/%E5%BE%AE%E4%BF%A1%E8%B5%9E%E8%B5%8F.png" title="微信赞赏" style="height:350px;" />
+  <img src="https://img.qiuzhihu.cn/mp/%E6%94%AF%E4%BB%98%E5%AE%9D.png" title="支付宝赞赏" style="height:350px;margin-left: 50px;" />
+</div>
