@@ -8,7 +8,7 @@ export default {
     const data = ref({ key: "key", value: "value" });
     const validate = async (editor) => {
       const res = await editor.validate();
-      console.log(res);
+      console.log("blur validate", res);
     };
 
     return {
