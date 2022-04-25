@@ -90,21 +90,10 @@ export default defineConfig({
   plugins: [vue(),viteCommonjs()],
 })
 ```
-## 常见问题
 
-1. 报错 `node_modules/jsoneditor/dist/jsoneditor.min.js?v=8e2051fe' does not provide an export named 'default'`
+Vite的 [官方文档](https://vitejs.dev/guide/features.html) 也有提到：Pre-bundle them to improve page loading speed and convert CommonJS / UMD modules to ESM.所以不需要这个plugin，不过得直接在项目源代码里 import 'jsoneditor' 才会转换。
 
 参考 [issue #4](https://github.com/guyue88/json-editor-vue3/issues/4)
-Vite的 [官方文档](https://vitejs.dev/guide/features.html) 有提到：Pre-bundle them to improve page loading speed and convert CommonJS / UMD modules to ESM.所以不需要这个plugin，不过得直接在项目源代码里 import 'jsoneditor' 才会转换。
-
-也可以使用插件解决：
-```
-// vite.config.js
-import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
-export default defineConfig({
-  plugins: [vue(),viteCommonjs()],
-})
-```
 
 ## 公众号
 
