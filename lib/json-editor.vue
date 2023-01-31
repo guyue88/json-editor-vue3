@@ -5,6 +5,7 @@ import "jsoneditor/dist/jsoneditor.min.css";
 export default {
   editor: null,
   name: "json-editor-vue",
+  internalChange: false,
   props: {
     modelValue: Object,
     // https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#configuration-options
@@ -15,7 +16,7 @@ export default {
     },
     modeList: {
       type: Array,
-      default: ["tree", "code", "form", "text", "view"],
+      default: () => ["tree", "code", "form", "text", "view"],
     },
     // en, es zh-CN, pt-BR, tr, ja, fr-FR, de, ru, ko
     language: {
@@ -27,7 +28,6 @@ export default {
     return {
       json: this.modelValue,
       expandedModes: ["tree", "view", "form"],
-      inChange: false,
       // 全屏处理
       isFullScreen: false,
       hasLogo: true,
@@ -39,6 +39,7 @@ export default {
       immediate: true,
       deep: true,
       handler(val) {
+        // 内容变化赋值
         if (!this.internalChange) {
           this.setEditorContent(val);
           this.$nextTick(() => {
@@ -67,8 +68,7 @@ export default {
     init() {
       const { currentMode, modeList, options } = this;
       const onChange = () => {
-        try {
-          const json = this.editor.get();
+        const setJson = (json) => {
           this.json = json;
           this.$emit("update:modelValue", json);
           this.$emit("change", json);
@@ -76,7 +76,21 @@ export default {
           this.$nextTick(() => {
             this.internalChange = false;
           });
-        } catch (error) {}
+        };
+
+        // 兼容一次性删除所有内容
+        const text = this.editor.getText();
+        if (!text) {
+          setJson({});
+          return;
+        }
+
+        try {
+          const json = this.editor.get();
+          setJson(json);
+        } catch (error) {
+          // console.log(error)
+        }
       };
       const onModeChange = () => {
         this.expandAll();
