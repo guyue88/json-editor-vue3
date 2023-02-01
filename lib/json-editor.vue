@@ -64,6 +64,9 @@ export default {
   methods: {
     toggleFullScreen() {
       this.isFullScreen = !this.isFullScreen;
+      this.$nextTick(() => {
+        this.editor.refresh();
+      });
     },
     init() {
       const { currentMode, modeList, options } = this;
