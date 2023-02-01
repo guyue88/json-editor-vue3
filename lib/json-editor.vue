@@ -65,7 +65,8 @@ export default {
     toggleFullScreen() {
       this.isFullScreen = !this.isFullScreen;
       this.$nextTick(() => {
-        this.editor.refresh();
+        const event = new Event("resize");
+        window.dispatchEvent(event);
       });
     },
     init() {
