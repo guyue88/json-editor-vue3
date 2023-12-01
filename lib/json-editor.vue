@@ -111,8 +111,11 @@ export default {
       const onFocus = ({ target }) => {
         this.$emit("focus", this.editor, target);
       };
-      const onBlur = async ({ target }) => {
+      const onBlur = ({ target }) => {
         this.$emit("blur", this.editor, target);
+      };
+      const onValidationError = (errors) => {
+        this.$emit("validationError", this.editor, errors);
       };
       const finalOptions = {
         ...options,
@@ -127,6 +130,7 @@ export default {
         onColorPicker,
         onFocus,
         onBlur,
+        onValidationError,
       };
       this.editor = new JsonEditor(
         this.$refs.jsonEditorVue,

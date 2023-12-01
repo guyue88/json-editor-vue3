@@ -10,7 +10,7 @@
 
 基于 `jsoneditor` 开发的vue3 json editor，支持全屏编辑，有完善的事件回调，可以在失去焦点时，对编辑器内容做校验。
 
-<img src="https://img.qiuzhihu.cn/mp/json-editor-vue3.png" style="width: 700px" />
+<img src="https://img.qiuzhihu.com/mp/json-editor-vue3.png" style="width: 700px" />
 
 ## 安装
 
@@ -60,23 +60,24 @@ export default {
 
 | Name | Type | Description | Default | 
 | ---- | ---- | ----------- | ------- |
-| modelValue | Object | 要编辑的json值 |  |
-| options | Object | jsoneditor的options，参考[configuration-options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#configuration-options) |  |
+| modelValue | Object | 要编辑的json值 |--|
+| options | Object | jsoneditor 的options，参考[configuration-options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#configuration-options) |--|
 | currentMode | String | 当前编辑模式 | code |
 | modeList | Array | 可选的编辑模式列表 | ["tree", "code", "form", "text", "view"] |
 | language | Array | 语言 | en |
 
 ### 事件
 
-| Name  | Description    |
-| ----- | -------------- |
-| update:modelValue | json 更新 |
-| change | json 更新 |
-| textSelectionChange | 参考[configuration-options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#configuration-options)对应参数，参数有重写，第一个参数为编辑器的实例，后续参数与官方参数相同 |
-| selectionChange | 同上 |
-| focus | 同上 |
-| blur | 同上 |
-| colorPicker | 同上 |
+| Name  | Type | Description    |
+| ----- | ---------|-------------- |
+| update:modelValue|(json: Object) => void | json 更新 |
+| change |(json: Object) => void; | json 更新 |
+| textSelectionChange|(editor:Editor, start: number, end: number, text: string) => void; | 选择文本时触发的回调函数 |
+| selectionChange| (editor:Editor, start: number, end: number) => void; | 选择节点时触发的回调函数 |
+| focus |(editor:Editor, target: HTMLElement) => void; | 获取焦点 |
+| blur |(editor:Editor, target: HTMLElement) => void; | 时区焦点 |
+| colorPicker| (editor:Editor, parent: any, color: string, onChange: any) => void; | 当用户点击颜色时触发回调函数 |
+| validationError| (editor:Editor, errors: ValidationError[]) => void; | 如果发现任何类型的错误，则会使用错误数据调用此回调 |
 
 ## 常见问题
 
@@ -99,12 +100,12 @@ Vite的 [官方文档](https://vitejs.dev/guide/features.html) 也有提到：Pr
 
 欢迎关注作者公众号`前端方程式`，如果您有任何问题，也可以通过该公众号联系作者。
 
-<img src="https://img.qiuzhihu.cn/mp/%E5%85%AC%E4%BC%97%E5%8F%B7.png" title="前端方程式" style="height:150px;" />
+<img src="https://img.qiuzhihu.com/mp/%E5%85%AC%E4%BC%97%E5%8F%B7.png" title="前端方程式" style="height:150px;" />
 
 ## 捐赠 json-editor-vue3 的开发
 
 json-editor-vue3 的文档和代码完全开源，如果该项目有帮助到你的开发工作，你可以捐赠json-editor-vue3的研发工作，捐赠无门槛，哪怕是一杯可乐也好。
 <div style="display:flex; align-items: center;">
-  <img src="https://img.qiuzhihu.cn/mp/%E5%BE%AE%E4%BF%A1%E8%B5%9E%E8%B5%8F.png" title="微信赞赏" style="height:350px;" />
-  <img src="https://img.qiuzhihu.cn/mp/%E6%94%AF%E4%BB%98%E5%AE%9D.png" title="支付宝赞赏" style="height:350px;margin-left: 50px;" />
+  <img src="https://img.qiuzhihu.com/mp/%E5%BE%AE%E4%BF%A1%E8%B5%9E%E8%B5%8F.png" title="微信赞赏" style="height:350px;" />
+  <img src="https://img.qiuzhihu.com/mp/%E6%94%AF%E4%BB%98%E5%AE%9D.png" title="支付宝赞赏" style="height:350px;margin-left: 50px;" />
 </div>
