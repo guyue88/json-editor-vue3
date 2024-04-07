@@ -7,7 +7,7 @@ export default {
   name: "json-editor-vue",
   internalChange: false,
   props: {
-    modelValue: Object,
+    modelValue: Object | Number | Array,
     // https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#configuration-options
     options: Object,
     currentMode: {
@@ -85,7 +85,7 @@ export default {
         // 兼容一次性删除所有内容
         const text = this.editor.getText();
         if (!text) {
-          setJson({});
+          setJson('');
           return;
         }
 
@@ -93,7 +93,7 @@ export default {
           const json = this.editor.get();
           setJson(json);
         } catch (error) {
-          // console.log(error)
+          // console.log(error);
         }
       };
       const onModeChange = () => {
